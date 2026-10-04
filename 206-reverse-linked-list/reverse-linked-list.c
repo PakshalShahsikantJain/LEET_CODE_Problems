@@ -10,35 +10,52 @@ typedef struct ListNode NODE;
 typedef struct ListNode * PNODE;
 typedef struct ListNode ** PPNODE;
 
-void InsertFirst(PPNODE Head,int no) 
-{   
-    PNODE newn = (PNODE)malloc(sizeof(NODE));
-    newn->val = no;
-    newn->next = NULL;
+// void InsertFirst(PPNODE Head,int no) 
+// {   
+//     PNODE newn = (PNODE)malloc(sizeof(NODE));
+//     newn->val = no;
+//     newn->next = NULL;
 
-    if(*Head == NULL)
-    {
-        *Head = newn;
-    }
-    else 
-    {
-        newn->next = *Head;
-        *Head = newn;
-    }
-}
+//     if(*Head == NULL)
+//     {
+//         *Head = newn;
+//     }
+//     else 
+//     {
+//         newn->next = *Head;
+//         *Head = newn;
+//     }
+// }
 
-PNODE reverseList(PNODE Head)
+// PNODE reverseList(PNODE Head)
+// {
+//     PNODE temp = NULL;
+
+//     while(Head != NULL)
+//     {
+//         InsertFirst(&temp,Head->val);
+//         Head = Head->next;
+//     }
+
+//     free(Head);
+//     return temp;    
+// }
+
+PNODE reverseList(PNODE head)
 {
-    PNODE temp = NULL;
+    PNODE prev = NULL;
+    PNODE curr = head;
 
-    while(Head != NULL)
+    while (curr != NULL)
     {
-        InsertFirst(&temp,Head->val);
-        Head = Head->next;
+        PNODE next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next
+        /* 3: move prev forward */;
+        /* 4: move curr forward */;
     }
-
-    free(Head);
-    return temp;    
+    return prev;
 }
 
 // struct ListNode* reverseList(struct ListNode* head) {
