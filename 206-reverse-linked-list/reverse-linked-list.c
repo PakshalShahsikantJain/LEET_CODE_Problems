@@ -37,7 +37,7 @@ PNODE reverseList(PNODE Head)
         Head = Head->next;
     }
 
-    // free(Head);
+    free(Head);
     return temp;    
 }
 
