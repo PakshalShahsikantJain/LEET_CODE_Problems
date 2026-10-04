@@ -37,7 +37,8 @@ PNODE reverseList(PNODE Head)
         Head = Head->next;
     }
 
-    return temp;
+    free(Head);
+    return temp;    
 }
 
 // struct ListNode* reverseList(struct ListNode* head) {
