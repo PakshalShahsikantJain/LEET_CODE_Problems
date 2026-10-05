@@ -18,9 +18,9 @@ bool hasCycle(PNODE Head) {
 
     while(fast != NULL && fast->next != NULL)
     {
-        slow = slow->next;
         fast = fast->next->next;
-
+        slow = slow->next;
+        
         if(slow == fast)
         {
             bret = TRUE;
