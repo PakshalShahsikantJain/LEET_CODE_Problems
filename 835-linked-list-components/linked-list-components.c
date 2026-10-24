@@ -29,7 +29,7 @@ int numComponents(PNODE head, int* nums, int numsSize) {
         while(head != NULL && arr[head->val])
         {
             ok = 1;
-            arr[head->val] = 0;
+            // arr[head->val] = 0;
             head = head->next;
         }
 
