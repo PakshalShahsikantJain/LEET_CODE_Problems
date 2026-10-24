@@ -13,7 +13,14 @@ typedef struct ListNode ** PPNODE;
 int numComponents(PNODE head, int* nums, int numsSize) {
     int icnt = 0;
     int prevInNums = 0;
+    // int arr[10001] = {0};
+
     int i = 0;
+
+    // for(i = 0;i < numsSize;i++)
+    // {
+    //     arr[nums[i]] = 1;
+    // }
 
     while (head != NULL)
     {
