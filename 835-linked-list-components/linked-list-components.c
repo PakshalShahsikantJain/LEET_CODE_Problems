@@ -13,35 +13,35 @@ typedef struct ListNode ** PPNODE;
 int numComponents(PNODE head, int* nums, int numsSize) {
     int icnt = 0;
     int prevInNums = 0;
-    // int arr[10001] = {0};
+    int arr[10001] = {0};
 
     int i = 0;
 
-    // for(i = 0;i < numsSize;i++)
-    // {
-    //     arr[nums[i]] = 1;
-    // }
+    for(i = 0;i < numsSize;i++)
+    {
+        arr[nums[i]] = 1;
+    }
 
     while (head != NULL)
     {
-        int currInNums = 0;
+        int ok = 0 ;
 
-        for(i = 0;i < numsSize;i++)
+        while(head != NULL && arr[head->val])
         {
-            if(head->val == nums[i])
-            {
-                currInNums = 1;
-                break;
-            }
+            ok = 1;
+            arr[head->val] = 0;
+            head = head->next;
         }
 
-        if (currInNums && !prevInNums)
+        if(ok) 
         {
             icnt++;
         }
 
-        prevInNums = currInNums;
-        head = head->next;
+        if(head) 
+        {
+            head = head->next;
+        }
     }
 
     return icnt;
